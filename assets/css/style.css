@@ -1,0 +1,15 @@
+body {
+color: blanchedalmond;
+}
+.jumbotron{
+    background-size: cover;
+    background-image: url("../images/images.jpg");
+    /* padding-top: 15px; */
+    margin-top: 20px;
+}
+
+#welcome {
+    text-align: center;
+}
+
+
