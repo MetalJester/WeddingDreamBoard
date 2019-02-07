@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="search-save assets/css/reset.css">
+    <link rel="stylesheet" href="search-save assets/css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <!-- script for jquery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <!-- script for firebase -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <!-- script for hamburger button -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <title>The Wedding Board</title>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">The Wedding Board</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- fluid container for page content -->
+    <div class="container-fluid">
+        <!-- row for search field and save locations header -->
+        <div class="row" style="background: rgb(255, 217, 0)">
+            <div class="col-9">
+                <div class="col">
+                    <form class="form-inline">
+                        <input class="form-control mt-2 mb-2 mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-secondary mt-2 mb-2 my-2 my-sm-0" type="submit">Search Vendors</button>
+                    </form>
+                </div>
+
+            </div>
+
+            <div class="col-3 border-left border-light d-flex justify-content-center">
+                <h5 class="text-justify text-secondary mt-3">Saved Vendors</h5>
+
+            </div>
+
+        </div>
+        <!-- row for containing the search results div -->
+        <div class="row" id="search-vendors" style="background: rgb(233, 232, 227)">
+          
+            <div class="col-9">
+                  <!-- div for google search results to append to -->
+                <div id="vendors-appear-here" class="d-flex flex-wrap"></div>
+
+            </div>
+            <!-- column for saved vendor information -->
+            <div class="col-3 border-left border-light d-flex justify-content-center">
+                <!-- div for saved vendors to append to -->
+                <div id="saved-vendors" class="d-flex"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+</body>
+
+</html>
