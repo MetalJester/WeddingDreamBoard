@@ -1,0 +1,43 @@
+#bodyContainer{
+    width: 1000px;
+    height: 800px;
+    margin: auto;
+}
+
+#titleBlock{
+    background-color: black;
+    color: white;
+    position: relative;
+    height: 150px;
+    padding: 20px;
+}
+
+.btn-warning {
+    background-color: pink;
+    border: 3px solid white;
+}
+
+#title{
+    position: absolute;
+    right: 450px;
+    top: 50px;
+}
+
+#search{
+    position: absolute;
+    top: 40px;
+    left: 50px;
+}
+
+#searchInput{
+    margin-right: 15px;
+}
+
+.allContainers{
+    margin: 20px;
+    float: left;
+}
+
+.card-body{
+    margin: auto;
+}
