@@ -10,49 +10,108 @@
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <!-- working on an image icon -->
+    <!-- Image Icons -->
     <link rel="shortcut icon" href="/favicon.png" type="images/png">
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
 </head>
 
 <body>
+    <script src="firebase.js"></script>
+
     <div class="container">
         <div class="jumbotron" id="welcome">
             <h1 class="display-4">Hello, Beautiful!</h1>
             <p class="lead">Wedding Planning at your Fingertips.</p>
             <hr class="my-4">
-            <form>
-                <div class="row">
-                    <div class="col-sm-3"></div>
-                    <div class="form-group col-sm-6 col-xs-4">
-                        <label for="exampleInputEmail1">Email address</label>
-                        <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
-                            placeholder="Enter email">
-                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
-                            else.</small>
-                    </div>
-                    <div class="col-sm-3"></div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-3"></div>
-                    <div class="form-group col-sm-6 col-xs-4">
-                        <label for="exampleInputPassword1">Password</label>
-                        <input type="password" class="form-control" id="password1" aria-describedby="passwordHelp"
-                            placeholder="Password">
-                    </div>
-                    
-                </div>           
+
+            <!-- SIGN IN -->
+            <div id="signInContainer">
+                <form>
                     <div class="row">
                         <div class="col-sm-3"></div>
-                        <button type="submit col-sm-6 col-xs-4" class="btn btn-primary" id="password1">Submit</button>
+                        <div class="form-group col-sm-6 col-xs-4">
+                            <label for="exampleInputEmail">Email address</label>
+                            <input type="email" class="form-control" id="emailInput" aria-describedby="emailHelp"
+                                placeholder="username@email.com">
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                                else.</small>
+                        </div>
                         <div class="col-sm-3"></div>
                     </div>
-                </div>
-            </form>
+                    <div class="row">
+                        <div class="col-sm-3"></div>
+                        <div class="form-group col-sm-6 col-xs-4">
+                            <label for="exampleInputPassword">Password</label>
+                            <input type="password" class="form-control" id="passwordInput"
+                                aria-describedby="passwordHelp" placeholder="Password">
+                        </div>
+
+                    </div>
+
+                    <!-- SUBMIT BUTTON -->
+
+                    <div class="row">
+                        <div class="col-sm-3"></div>
+                        <button type="submit col-sm-6 col-xs-4" class="btn btn-primary" id="signInBtn">Sign In</button>
+                        <div class="col-sm-3"></div>
+                    </div>
+                    <p>Not a member? Sign up
+                        <a class="here" id="signInLink" href="">here.</a>
+                    </p>
+                </form>
+
+            </div>
+
+            <!-- SIGN UP -->
+            <div id="signUpContainer">
+                <form>
+                    <div class="row">
+                        <div class="col-sm-3"></div>
+                        <div class="form-group col-sm-6 col-xs-4">
+                            <label for="exampleInputEmail">Email address</label>
+                            <input type="email" class="form-control" id="emailInput" aria-describedby="emailHelp"
+                                placeholder="username@email.com">
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                                else.</small>
+                        </div>
+                        <div class="col-sm-3"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3"></div>
+                        <div class="form-group col-sm-6 col-xs-4">
+                            <label for="exampleInputPassword">Password</label>
+                            <input type="password" class="form-control" id="passwordInput"
+                                aria-describedby="passwordHelp" placeholder="Password">
+                        </div>
+
+                    </div>
+
+                    <!-- SUBMIT BUTTON -->
+
+                    <div class="row">
+                        <div class="col-sm-3"></div>
+                        <button type="submit col-sm-6 col-xs-4" class="btn btn-primary" id="signUpBtn">Sign Up</button>
+                        <div class="col-sm-3"></div>
+                    </div>
+                    <p>Alread a member? Sign in
+                        <a class="here" id="signInLink" href="">here.</a>
+                    </p>
+                </form>
+
+            </div>
+
+
+
         </div>
 
 
     </div>
+    </div>
+    <script src="signin.js"></script>
 </body>
 
 </html>
