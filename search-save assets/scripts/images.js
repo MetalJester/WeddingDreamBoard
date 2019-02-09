@@ -1,5 +1,27 @@
-// need to add default search term
-var keyword = "wedding-dress"; //$("#image-input").val().trim();// this is secondary search term that will be appended to the default search term
+
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDoqplrMza8y0-O47c4e8sbzL9j5kweS88",
+    authDomain: "project-1-wedding.firebaseapp.com",
+    databaseURL: "https://project-1-wedding.firebaseio.com",
+    projectId: "project-1-wedding",
+    storageBucket: "project-1-wedding.appspot.com",
+    messagingSenderId: "753268659245"
+  };
+  firebase.initializeApp(config);
+
+  var database = firebase.database();
+
+  $(document).on("click", "#picture", function() {
+
+    //select image and push to database
+
+
+  });
+
+
+var keyword = "wedding-dress"; // need to change to default search term from home page button (data-val)
+//$("#image-input").val().trim();// this is secondary search term that will be appended to the default search term
 var queryURL = "https://api.unsplash.com/search/photos?per_page=30&query=" + keyword + 
 "&client_id=9a85effe1f10fcad9e85e179b923e801807342ab6fb9db2a916cddc1003596ae";
 
@@ -32,7 +54,7 @@ $(document).on("click", "#image-search-btn", function (event) {
             imageDiv.append(name);
 
             //dynamically add link to image source
-            var portfolioLink = $("<a href='results[i].user.portfolio_url'>Visit photographer's portfolio</a>");
+            var portfolioLink = $(`<a href='${results[i].links.html}'>View image source and related photos</a>`);
             imageDiv.append(portfolioLink);       
                                    
             // add styling to images on page
