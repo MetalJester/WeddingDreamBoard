@@ -5,17 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- Reset Sheet -->
+    <!--jQuery-->
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>    <!-- Reset Sheet -->
     <link rel="stylesheet" type="text/css" href="reset.css">
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <!-- JQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Style Sheet -->
     <link rel="stylesheet" type="text/css" href="weddingstyle.css">
+    <!-- google fonts
+    <link href="https://fonts.googleapis.com/css?family=Tangerine" rel="stylesheet"> -->
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
 
 
@@ -24,114 +28,122 @@
 
 <body>
 
-        <div id="titleBlock">
+    <div id="titleBlock">
 
-                <!-- Site Name -->
-                <h1 id="title">Wedding Faves</h1>
-        
-                <!-- Search Box -->
-                
-                <div id="search">
-        
-                    <label for="searchBox" id="label">Type in an item you are looking for.</label>
-                    <form id="searchBox">
-                        <input type="text" id="searchInput">
-                        <input id="submitButton" type="submit" value="Add Item" class="btn btn-warning">
-                    </form>
-        
+        <!-- Site Name -->
+        <h1 id="title">Wedding Faves</h1>
+
+        <!-- Search Box -->
+
+        <div id="search">
+
+            <label for="searchBox" id="label">Type in an item you are looking for.</label>
+            <form id="searchBox">
+                <input type="text" id="searchInput">
+                <input id="submitButton" type="submit" value="Add Item" class="btn btn-warning">
+            </form>
+
+        </div>
+
+    </div>
+
+    <div class="container">
+
+        <div id="weddingDress" class="allContainers">
+            <div class="card" style="width: 18rem;">
+                <img src="assets/images/weddingDress.jpg" class="card-img-top" alt="Wedding Dresses">
+                <div class="card-body">
+                    <p class="card-text">Wedding Dresses</p>
+                    <button class="btn favbtn" data-type="dresses"><i class="far fa-heart"></i></button>
+                    <button class="btn mapBtn" data-type="dresses"><i class="fas fa-map-marker-alt"></i></button>
+                    <button class="btn ideaBtn" data-type="dresses"><i class="far fa-lightbulb"></i></button>
                 </div>
-        
             </div>
+        </div>
 
-        <div class="container">
-            
-                        <div id="buttonContainer" class="allContainers">
-                                <div class="card" style="width: 18rem;">
-                                    <img src="weddingdress.png" class="card-img-top" alt="Wedding Dresses">
-                                        <div class="card-body">
-                                            <p class="card-text">Wedding Dresses</p>
-                                            <button class="btn"><i class="far fa-heart"></i></button>
-                                            <button class="btn"><i class="fas fa-map-marker-alt"></i></button>
-                                            <button class="btn"><i class="far fa-lightbulb"></i></button>
-                                        </div>
-                                </div>
-                        </div>
+        <div id="groomstuxedo" class="allContainers">
+            <div class="card" style="width: 18rem">
+                <img style="height: 428px" src="assets/images/groomsSuit.jpg" class="card-img-top" alt="Wedding Dresses">
+                <div class="card-body">
+                    <p class="card-text">Tuxedo</p>
+                    <button class="btn favbtn" data-type="tuxedo"><i class="far fa-heart"></i></button>
+                    <button class="btn mapBtn" data-type="tuxedo"><i class="fas fa-map-marker-alt"></i></button>
+                    <button class="btn ideaBtn" data-type="tuxedo"><i class="far fa-lightbulb"></i></button>
+                </div>
+            </div>
+        </div>
 
-                        <div id="buttonContainer" class="allContainers">
-                                <div class="card" style="width: 18rem;">
-                                    <img src="weddingdress.png" class="card-img-top" alt="Wedding Dresses">
-                                        <div class="card-body">
-                                            <p class="card-text">Wedding Dresses</p>
-                                            <button class="btn"><i class="far fa-heart"></i></button>
-                                            <button class="btn"><i class="fas fa-map-marker-alt"></i></button>
-                                            <button class="btn"><i class="far fa-lightbulb"></i></button>
-                                        </div>
-                                </div>
-                        </div>
+        <div id="cakes" class="allContainers">
+            <div class="card" style="width: 18rem;">
+                <img src="assets/images/cakes.jpg" class="card-img-top" alt="Wedding Dresses">
+                <div class="card-body">
+                    <p class="card-text">Cakes</p>
+                    <button class="btn favbtn" data-type="wedding-cake"><i class="far fa-heart"></i></button>
+                    <button class="btn mapBtn" data-type="weddind-cake"><i class="fas fa-map-marker-alt"></i></button>
+                    <button class="btn ideaBtn" data-type="wedding-cake"><i class="far fa-lightbulb"></i></button>
+                </div>
+            </div>
+        </div>
+        
+    <div>
 
-                        <div id="buttonContainer" class="allContainers">
-                                <div class="card" style="width: 18rem;">
-                                    <img src="weddingdress.png" class="card-img-top" alt="Wedding Dresses">
-                                        <div class="card-body">
-                                            <p class="card-text">Wedding Dresses</p>
-                                            <button class="btn"><i class="far fa-heart"></i></button>
-                                            <button class="btn"><i class="fas fa-map-marker-alt"></i></button>
-                                            <button class="btn"><i class="far fa-lightbulb"></i></button>
-                                        </div>
-                                </div>
-                        </div>
+    </div>
 
-                        <div id="buttonContainer" class="allContainers">
-                                <div class="card" style="width: 18rem;">
-                                    <img src="weddingdress.png" class="card-img-top" alt="Wedding Dresses">
-                                        <div class="card-body">
-                                            <p class="card-text">Wedding Dresses</p>
-                                            <button class="btn"><i class="far fa-heart"></i></button>
-                                            <button class="btn"><i class="fas fa-map-marker-alt"></i></button>
-                                            <button class="btn"><i class="far fa-lightbulb"></i></button>
-                                        </div>
-                                </div>
-                        </div>
+        <div id="venues" class="allContainers">
+            <div class="card" style="width: 18rem;">
+                <img src="assets/images/venues5.jpg" class="card-img-top" alt="Wedding Dresses">
+                <div class="card-body">
+                    <p class="card-text">Venues</p>
+                    <button class="btn favbtn" data-type="venues"><i class="far fa-heart"></i></button>
+                    <button class="btn mapBtn" data-type="venues"><i class="fas fa-map-marker-alt"></i></button>
+                    <button class="btn ideaBtn" data-type="venues"><i class="far fa-lightbulb"></i></button>
+                </div>
+            </div>
+        </div>
 
-                        <div id="buttonContainer" class="allContainers">
-                                <div class="card" style="width: 18rem;">
-                                    <img src="weddingdress.png" class="card-img-top" alt="Wedding Dresses">
-                                        <div class="card-body">
-                                            <p class="card-text">Wedding Dresses</p>
-                                            <button class="btn"><i class="far fa-heart"></i></button>
-                                            <button class="btn"><i class="fas fa-map-marker-alt"></i></button>
-                                            <button class="btn"><i class="far fa-lightbulb"></i></button>
-                                        </div>
-                                </div>
-                        </div>
+        <div id="weddingBouquet" class="allContainers">
+            <div class="card" style="width: 18rem;">
+                <img src="assets/images/bouquet.jpg" class="card-img-top" alt="Wedding Dresses">
+                <div class="card-body">
+                    <p class="card-text">Wedding Bouquet</p>
+                    <button class="btn favbtn" data-type="wedding-bouquet"><i class="far fa-heart"></i></button>
+                    <button class="btn mapBtn" data-type="wedding-bouquet"><i class="fas fa-map-marker-alt"></i></button>
+                    <button class="btn ideaBtn" data-type="wedding-bouquet"><i class="far fa-lightbulb"></i></button>
+                </div>
+            </div>
+        </div>
 
-                        <div id="buttonContainer" class="allContainers">
-                                <div class="card" style="width: 18rem;">
-                                    <img src="weddingdress.png" class="card-img-top" alt="Wedding Dresses">
-                                        <div class="card-body">
-                                            <p class="card-text">Wedding Dresses</p>
-                                            <button class="btn"><i class="far fa-heart"></i></button>
-                                            <button class="btn"><i class="fas fa-map-marker-alt"></i></button>
-                                            <button class="btn"><i class="far fa-lightbulb"></i></button>
-                                        </div>
-                                </div>
-                        </div>
-         </div>
+        <div id="bridesMaidDress" class="allContainers">
+            <div class="card" style="width: 18rem;">
+                <img src="assets/images/bridesmaid.jpg" class="card-img-top" alt="Wedding Dresses">
+                <div class="card-body">
+                    <p class="card-text">Bridesmaid Dresses</p>
+                    <button class="btn favbtn" data-type="bridesmaid-dress"><i class="far fa-heart"></i></button>
+                    <button class="btn mapBtn" data-type="bridesmaid-dress"><i class="fas fa-map-marker-alt"></i></button>
+                    <button class="btn ideaBtn" data-type="bridesmaid-dress"><i class="far fa-lightbulb"></i></button>
+                </div>
+            </div>
+        </div>
 
-                  
-<div id="bodyContainer">
 
-<script>
+    <!-- <div id="bodyContainer"> -->
+
+        <script>
+
+$(".mapBtn").on("click", function(){
+    console.log($(this).attr("data-type"));
+
+    window.location.href = "Vendor-Search.html?q=" + $(this).attr("data-type");
+
+})
 
 
 
+        </script>
 
+        <!-- <script type="text/javascript" src="javaScript.js"></script> -->
 
-    </script>
-    
- <!-- <script type="text/javascript" src="javaScript.js"></script> -->
-
-</div>
+    </div>
 
 </body>
 
