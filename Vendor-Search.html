@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="search-save assets/css/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
+    <link rel="stylesheet" href="search-save assets/css/map-style.css"> <!--css style sheet to make map visible-->
     <!-- script for jquery -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -53,8 +54,8 @@
             <div class="col-9">
                 <div class="col">
                     <form class="form-inline">
-                        <input class="form-control mt-2 mb-2 mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-secondary mt-2 mb-2 my-2 my-sm-0" type="submit">Search Vendors</button>
+                        <input id="location-input" class="form-control mt-2 mb-2 mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button id="location-search-btn" class="btn btn-secondary mt-2 mb-2 my-2 my-sm-0" type="submit">Search Vendors</button>
                     </form>
                 </div>
 
@@ -71,7 +72,7 @@
           
             <div class="col-9">
                   <!-- div for google search results to append to -->
-                <div id="vendors-appear-here" class="d-flex flex-wrap"></div>
+                <div id="map" class="d-flex flex-wrap"></div>
 
             </div>
             <!-- column for saved vendor information -->
@@ -84,8 +85,10 @@
 
     </div>
 
+<!-- Vendor-Search js file and Google Maps API URL -->
 
-
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAxugqYRJAdsSejK6O4BeNVaI3KQ4KnqkA&callback=initMap"></script>
+<script src="vendor-search.js"></script>
 </body>
 
 </html>
