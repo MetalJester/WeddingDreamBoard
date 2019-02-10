@@ -4,11 +4,7 @@ color: blanchedalmond;
 .jumbotron{
     background-size: cover;
     background-image: url("../images/couples.jpg");
-    /* padding: 100px; */
-    /* padding-top: 50px;
-    margin-top: 20px; */
     color: azure;
-    /* font-family: 'Tangerine', cursive; */
     font-size: 20px;    
 }
 
