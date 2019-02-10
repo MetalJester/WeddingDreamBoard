@@ -21,7 +21,25 @@ $(document).on("click", "#picture", function () {
         image: favImage,
     };
 
-    database.ref().push(newFav);  
+    database.ref().push(newFav);
+
+});
+
+database.ref().on("child_added", function (imageSnapshot) {
+    var addFavImage = imageSnapshot.val().image;
+    console.log(addFavImage);
+    var addImageDiv = $("<div>");
+    var newFavImage = $("<img>")
+    newFavImage.attr("src", addFavImage); //add small image source from the results
+    addImageDiv.append(newFavImage);  //append images to the div
+    $("#saved-images").prepend(addImageDiv); //dynamically push images to the div
+
+    //styling saved imaged in side panel
+    newFavImage.addClass("mt-2 mb-2");
+    newFavImage.attr('id', 'small'); 
+
+
+
 
 });
 
