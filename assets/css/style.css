@@ -1,9 +1,10 @@
 body {
 color: blanchedalmond;
-}
-.jumbotron{
+
+    margin-top: 50px;
     background-size: cover;
     background-image: url("../images/couples.jpg");
+
     /* padding: 100px; */
     /* padding-top: 50px;
     margin-top: 20px; */
@@ -13,10 +14,15 @@ color: blanchedalmond;
 }
 
 
-#welcome {
-    text-align: center;
+#signInBtn{
+    margin: auto;
 }
 
+.container{
+    text-align: center;
+    margin-top: 150px;
+    color: white;
+}
 
 
 
