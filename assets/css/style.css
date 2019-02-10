@@ -1,17 +1,26 @@
 body {
 color: blanchedalmond;
-}
-.jumbotron{
+
+    margin-top: 50px;
     background-size: cover;
-    background-image: url("../images/images.jpg");
-    /* padding-top: 15px; */
-    margin-top: 20px;
-}
+    background-image: url("../images/couples.jpg");
+    color: azure;
+    font-size: 20px;
+ }
 
-#welcome {
+/* #welcome {
     text-align: center;
+} */
+
+#signInBtn{
+    margin: auto;
 }
 
+.container{
+    text-align: center;
+    margin-top: 150px;
+    color: white;
+}
 
 
 
