@@ -44,6 +44,9 @@ database.ref().on("child_added", function (imageSnapshot) {
 $(document).on("click", ".ideaBtn", function (event) {
     event.preventDefault();
     console.log("I was clicked");
+    //get data-value from click
+    //put data-value into search
+    //
 });
 
 
