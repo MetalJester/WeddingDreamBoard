@@ -41,10 +41,10 @@ database.ref().on("child_added", function (imageSnapshot) {
 });
 
 //beginning of on click function that will grab a value from the button on index.html for the 
-// $(document).on("click", ".ideaBtn", function (event) {
-//     event.preventDefault();
-//     console.log("I was clicked");
-// });
+$(document).on("click", ".ideaBtn", function (event) {
+    event.preventDefault();
+    console.log("I was clicked");
+});
 
 
 var keyword = "wedding-dress"; // need to change to default search term from home page button (data-val)
