@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- script for Firebase -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
     <!--jQuery-->
     <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>    <!-- Reset Sheet -->
     <link rel="stylesheet" type="text/css" href="reset.css">
@@ -27,6 +31,8 @@
 </head>
 
 <body>
+
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
 
     <div id="titleBlock">
 
@@ -54,9 +60,9 @@
                 <img src="assets/images/weddingDress.jpg" class="card-img-top" alt="Wedding Dresses">
                 <div class="card-body">
                     <p class="card-text">Wedding Dresses</p>
-                    <button class="btn favbtn" data-type="dresses"><i class="far fa-heart"></i></button>
-                    <button class="btn mapBtn" data-type="dresses"><i class="fas fa-map-marker-alt"></i></button>
-                    <button class="btn ideaBtn" data-type="dresses"><i class="far fa-lightbulb"></i></button>
+                    <button class="btn favbtn" data-type="wedding-dress"><i class="far fa-heart"></i></button>
+                    <button class="btn mapBtn" data-type="wedding-dress"><i class="fas fa-map-marker-alt"></i></button>
+                    <button class="btn ideaBtn" data-type="wedding-dress"><i class="far fa-lightbulb"></i></button>
                 </div>
             </div>
         </div>
@@ -126,24 +132,12 @@
         </div>
 
 
-    <!-- <div id="bodyContainer"> -->
-
-        <script>
-
-$(".mapBtn").on("click", function(){
-    console.log($(this).attr("data-type"));
-
-    window.location.href = "Vendor-Search.html?q=" + $(this).attr("data-type");
-
-})
-
-
-
-        </script>
-
-        <!-- <script type="text/javascript" src="javaScript.js"></script> -->
+    
 
     </div>
+
+    <script src="search-save assets/scripts/images.js"></script>
+    <script src="assets/vendors.js"></script>
 
 </body>
 
