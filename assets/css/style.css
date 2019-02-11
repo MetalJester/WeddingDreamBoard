@@ -1,27 +1,25 @@
 body {
-color: blanchedalmond;
+    color: blanchedalmond;
 
-    margin-top: 50px;
-    background-size: cover;
-    background-image: url("../images/couples.jpg");
-
-    /* padding: 100px; */
-    /* padding-top: 50px;
-    margin-top: 20px; */
-    color: azure;
-    /* font-family: 'Tangerine', cursive; */
-    font-size: 20px;    
+        margin-top: 50px;
+        background-size: cover;
+        background-image: url("../images/couples.jpg");
+        color: azure;
+        font-size: 20px;
 }
 
+    /* #welcome {
+        text-align: center;
+    } */
 
-#signInBtn{
-    margin: auto;
+    #signInBtn{
+        margin: auto;
 }
 
-.container{
-    text-align: center;
-    margin-top: 150px;
-    color: white;
+    .container{
+        text-align: center;
+        margin-top: 150px;
+        color: white;
 }
 
 
