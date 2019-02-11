@@ -16,12 +16,13 @@ $(".mapBtn").on("click", function(){
     console.log($(this).attr("wedding-dress"));
     
     window.location.href = "Vendor-Search.html?q=" + $(this).attr("data-type");
-    window.location.href = "index.html?q=" + $(this).attr("data-type");
 
 })
 
 $(".ideaBtn").on("click", function(){
     console.log($(this).attr("tuxedo"));
+    window.location.href = "image-Search.html?q=" + $(this).attr("data-type");
+
 })
 
 
@@ -29,6 +30,6 @@ $(".ideaBtn").on("click", function(){
 $(".favBtn").on("click", function(){
     console.log($(this).attr("data-type"));
 
-    window.location.href = "Vendor-Search.html?q=" + $(this).attr("data-type");
+    // window.location.href = "......html?q=" + $(this).attr("data-type");
 
 })
