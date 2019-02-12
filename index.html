@@ -5,140 +5,116 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- script for Firebase -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-    crossorigin="anonymous"></script>
-    <!--jQuery-->
-    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>    <!-- Reset Sheet -->
-    <link rel="stylesheet" type="text/css" href="reset.css">
+    <title>Wedding Dreamboard</title>
+    <!-- css link -->
+    <link rel="stylesheet" type="text/css" href="assets/css/indexStyle.css">
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Tangerine" rel="stylesheet">
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <!-- JQuery -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!-- Style Sheet -->
-    <link rel="stylesheet" type="text/css" href="weddingstyle.css">
-    <!-- google fonts
-    <link href="https://fonts.googleapis.com/css?family=Tangerine" rel="stylesheet"> -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <!-- tittle image icon -->
+    <link rel="shortcut icon" href="assets/images/favicon1.png" type="images/png">
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
-        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-
-
-
-    <title>Project 1</title>
 </head>
 
 <body>
-
-    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
-
-    <div id="titleBlock">
-
-        <!-- Site Name -->
-        <h1 id="title">Wedding Faves</h1>
-
-        <!-- Search Box -->
-
-        <div id="search">
-
-            <label for="searchBox" id="label">Type in an item you are looking for.</label>
-            <form id="searchBox">
-                <input type="text" id="searchInput">
-                <input id="submitButton" type="submit" value="Add Item" class="btn btn-warning">
-            </form>
-
-        </div>
-
-    </div>
+    <script src="firebase.js"></script>
 
     <div class="container">
+        <!-- <div class="jumbotron" id="welcome"> -->
+            <h1 class="display-4">Greetings</h1>
+            <p class="lead">Experience wedding planning at your fingertips.</p>
+            <hr class="my-4">
 
-        <div id="weddingDress" class="allContainers">
-            <div class="card" style="width: 18rem;">
-                <img src="assets/images/weddingDress.jpg" class="card-img-top" alt="Wedding Dresses">
-                <div class="card-body">
-                    <p class="card-text">Wedding Dresses</p>
-                    <button class="btn favbtn" data-type="wedding-dress"><i class="far fa-heart"></i></button>
-                    <button class="btn mapBtn" data-type="wedding-dress"><i class="fas fa-map-marker-alt"></i></button>
-                    <button class="btn ideaBtn" data-type="wedding-dress"><i class="far fa-lightbulb"></i></button>
+            <!-- SIGN IN -->
+            <div id="signInContainer">
+                <form>
+                    <div class="row">
+                        <div class="col-sm-3"></div>
+                        <div class="form-group col-sm-6 col-xs-4">
+                            <!-- <label for="exampleInputEmail">Email address</label> -->
+                            <input type="email" class="form-control" id="emailInput" aria-describedby="emailHelp"
+                                placeholder="username@email.com">
+                            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                                else.</small> -->
+                        </div>
+                        <div class="col-sm-3"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3"></div>
+                        <div class="form-group col-sm-6 col-xs-4">
+                            <!-- <label for="exampleInputPassword">Password</label> -->
+                            <input type="password" class="form-control" id="passwordInput"
+                                aria-describedby="passwordHelp" placeholder="Password">
+                        </div>
 
-                </div>
+                    </div>
+
+                    <!-- SUBMIT BUTTON -->
+
+                    <div class="row">
+                        <div class="col-sm-3"></div>
+                        <button type="submit col-sm-6 col-xs-4" class="btn btn-primary" id="signInBtn">Sign In</button>
+                        <div class="col-sm-3"></div>
+                    </div>
+                    <br>
+                    <p>Not a member? Sign up
+                        <a class="here" id="signInLink" href=""><strong>here</strong>.</a>
+                    </p>
+                </form>
+
             </div>
-        </div>
 
-        <div id="groomstuxedo" class="allContainers">
-            <div class="card" style="width: 18rem">
-                <img style="height: 428px" src="assets/images/groomsSuit.jpg" class="card-img-top" alt="Wedding Dresses">
-                <div class="card-body">
-                    <p class="card-text">Tuxedo</p>
-                    <button class="btn favbtn" data-type="tuxedo"><i class="far fa-heart"></i></button>
-                    <button class="btn mapBtn" data-type="tuxedo"><i class="fas fa-map-marker-alt"></i></button>
-                    <button class="btn ideaBtn" data-type="tuxedo"><i class="far fa-lightbulb"></i></button>
-                </div>
-            </div>
-        </div>
+            <!-- SIGN UP -->
+            <div id="signUpContainer">
+                <form>
+                    <div class="row">
+                        <div class="col-sm-3"></div>
+                        <div class="form-group col-sm-6 col-xs-4">
+                            <label for="exampleInputEmail">Email address</label>
+                            <input type="email" class="form-control" id="emailInput" aria-describedby="emailHelp"
+                                placeholder="username@email.com">
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                                else.</small>
+                        </div>
+                        <div class="col-sm-3"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3"></div>
+                        <div class="form-group col-sm-6 col-xs-4">
+                            <label for="exampleInputPassword">Password</label>
+                            <input type="password" class="form-control" id="passwordInput"
+                                aria-describedby="passwordHelp" placeholder="Password">
+                        </div>
 
-        <div id="cakes" class="allContainers">
-            <div class="card" style="width: 18rem;">
-                <img src="assets/images/cakes.jpg" class="card-img-top" alt="Wedding Dresses">
-                <div class="card-body">
-                    <p class="card-text">Cakes</p>
-                    <button class="btn favbtn" data-type="wedding-cake"><i class="far fa-heart"></i></button>
-                    <button class="btn mapBtn" data-type="weddind-cake"><i class="fas fa-map-marker-alt"></i></button>
-                    <button class="btn ideaBtn" data-type="wedding-cake"><i class="far fa-lightbulb"></i></button>
-                </div>
+                    </div>
+
+                    <!-- SUBMIT BUTTON -->
+
+                    <div class="row">
+                        <div class="col-sm-3"></div>
+                        <button type="submit col-sm-6 col-xs-4" class="btn btn-primary" id="signUpBtn">Sign Up</button>
+                        <div class="col-sm-3"></div>
+                    </div>
+                    <br>
+                    <p>Alread a member? Sign in
+                        <a class="here" id="signInLink" href=""><strong>here</strong>.</a>
+                    </p>
+                </form>
+
             </div>
-        </div>
-        
-    <div>
+
+
+
+        <!-- </div> -->
 
     </div>
-
-        <div id="venues" class="allContainers">
-            <div class="card" style="width: 18rem;">
-                <img src="assets/images/venues5.jpg" class="card-img-top" alt="Wedding Dresses">
-                <div class="card-body">
-                    <p class="card-text">Venues</p>
-                    <button class="btn favbtn" data-type="venues"><i class="far fa-heart"></i></button>
-                    <button class="btn mapBtn" data-type="venues"><i class="fas fa-map-marker-alt"></i></button>
-                    <button class="btn ideaBtn" data-type="venues"><i class="far fa-lightbulb"></i></button>
-                </div>
-            </div>
-        </div>
-
-        <div id="weddingBouquet" class="allContainers">
-            <div class="card" style="width: 18rem;">
-                <img src="assets/images/bouquet.jpg" class="card-img-top" alt="Wedding Dresses">
-                <div class="card-body">
-                    <p class="card-text">Wedding Bouquet</p>
-                    <button class="btn favbtn" data-type="wedding-bouquet"><i class="far fa-heart"></i></button>
-                    <button class="btn mapBtn" data-type="wedding-bouquet"><i class="fas fa-map-marker-alt"></i></button>
-                    <button class="btn ideaBtn" data-type="wedding-bouquet"><i class="far fa-lightbulb"></i></button>
-                </div>
-            </div>
-        </div>
-
-        <div id="bridesMaidDress" class="allContainers">
-            <div class="card" style="width: 18rem;">
-                <img src="assets/images/bridesmaid.jpg" class="card-img-top" alt="Wedding Dresses">
-                <div class="card-body">
-                    <p class="card-text">Bridesmaid Dresses</p>
-                    <button class="btn favbtn" data-type="bridesmaid-dress"><i class="far fa-heart"></i></button>
-                    <button class="btn mapBtn" data-type="bridesmaid-dress"><i class="fas fa-map-marker-alt"></i></button>
-                    <button class="btn ideaBtn" data-type="bridesmaid-dress"><i class="far fa-lightbulb"></i></button>
-                </div>
-            </div>
-        </div>
-
-
-    
-   </div>
-
-    <script src="search-save assets/scripts/images.js"></script>
-    <script src="assets/vendors.js"></script>
-
+    </div>
+    <script src="index.js"></script>
 </body>
 
 </html>
