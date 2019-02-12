@@ -18,7 +18,7 @@ $(document).ready(function() {
     var autocomplete = new google.maps.places.Autocomplete(input);
     autocomplete.bindTo('bounds', map);
     autocomplete.setFields(
-        ['address_components', 'geometry', 'icon', 'name', '']);
+        ['address_components', 'geometry', 'icon', 'name']);
         
         var infowindowContent = document.getElementById('infowindow-content');
         infoWindow.setContent(infowindowContent);
