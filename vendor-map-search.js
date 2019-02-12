@@ -1,7 +1,7 @@
+//Global Variables
 var map;
-var markers = [];
-var myLatLng =new google.maps.LatLng(navigator.geolocation);
-var infoWindow;
+var myLatLng =new google.maps.LatLng(navigator.geolocation); //I may want to update this from html5 to api
+var infoWindow = new google.maps.InfoWindow;
 
 $(document).ready(function() {
 
@@ -12,8 +12,61 @@ $(document).ready(function() {
         zoom: 14
     });
 
-    infoWindow = new google.maps.InfoWindow;
-    if (navigator.geolocation) {
+    //Autocomplete start
+    var input = document.getElementById('location-input');
+
+    var autocomplete = new google.maps.places.Autocomplete(input);
+    autocomplete.bindTo('bounds', map);
+    autocomplete.setFields(
+        ['address_components', 'geometry', 'icon', 'name', '']);
+        
+        var infowindowContent = document.getElementById('infowindow-content');
+        infoWindow.setContent(infowindowContent);
+        //Create Markers
+        var marker = new google.maps.Marker({
+            map: map,
+            anchorPoint: new google.maps.Point(0, -29)
+          });
+
+          autocomplete.addListener('place_changed', function() {
+            infoWindow.close();
+            marker.setVisible(false);
+            var place = autocomplete.getPlace();
+            console.log(place);
+            if (!place.geometry) {
+
+              window.alert("No details available for input: '" + place.name + "'");
+              return;
+            }
+  
+            // If the place has a geometry, then present it on a map.
+            if (place.geometry.viewport) {
+              map.fitBounds(place.geometry.viewport);
+            } else {
+              map.setCenter(place.geometry.location);
+              map.setZoom(17);  // Why 17? Because it looks good.
+            }
+            marker.setPosition(place.geometry.location);
+            marker.setVisible(true);
+  
+            var address = '';
+            if (place.address_components) {
+              address = [
+                (place.address_components[0] && place.address_components[0].short_name || ''),
+                (place.address_components[1] && place.address_components[1].short_name || ''),
+                (place.address_components[2] && place.address_components[2].short_name || '')
+              ].join(' ');
+            }
+  
+            infowindowContent.children['place-icon'].src = place.icon;
+            infowindowContent.children['place-name'].textContent = place.name;
+            infowindowContent.children['place-address'].textContent = address;
+            infoWindow.open(map, marker);
+          });
+
+
+    //geolocation
+    if (navigator.geolocation) { 
         navigator.geolocation.getCurrentPosition(function(position) {
           var pos = {
             lat: position.coords.latitude,
@@ -33,6 +86,7 @@ $(document).ready(function() {
       }
     }
 
+    //Error. Handle it!
     function handleLocationError(browserHasGeolocation, infoWindow, pos) {
       infoWindow.setPosition(pos);
       infoWindow.setContent(browserHasGeolocation ?
@@ -41,46 +95,19 @@ $(document).ready(function() {
       infoWindow.open(map);
     }
 
-
     //Button click event for searching vendors.
-$("#location-search-btn").on("click", function(event){
-    event.preventDefault();
-    // console.log("clicky-click");
+// $("#location-search-btn").on("click", function(event){
+//     event.preventDefault();
+//     // console.log("clicky-click");
 
-    //Make some markers
-    var marker = new google.maps.Marker({
-        position: myLatLng,
-        map: map,
-      });
-    //Variable to temporarily store user-input in the search box
-    var searchBox = new google.maps.places.SearchBox(document.getElementById('location-input'));
+//     var marker = new google.maps.Marker({
+//         position: myLatLng,
+//         map: map,
+//       });
 
-    //Experimenting with this to see if it will help get it to work V
-    google.maps.event.addListener(searchBox, 'places_changed', function() {
-        var places = searchBox.getPlaces();
-        if (places.length == 0) {
-          return;
-        }
-        for (var i = 0, marker; marker = markers[i]; i++) {
-          marker.setMap(null);
-        }
-    });
+
    
-});
-
-
-      //Call on back now, would ya? That is, if it's OK.
-    function callback(results, status, name) {
-        // console.log(results);
-        if (status == google.maps.places.PlacesServiceStatus.OK) {
-          for (var i = 0; i < results.length; i++) {
-            var place = results[i];
-            var name = place.name;
-            console.log(place);
-            createMarker(results[i], name);
-          }
-        }
-      }
+// });
 
 
 getLocation();
