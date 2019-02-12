@@ -8,10 +8,6 @@ body {
         font-size: 20px;
 }
 
-    /* #welcome {
-        text-align: center;
-    } */
-
     #signInBtn{
         margin: auto;
 }
@@ -22,5 +18,14 @@ body {
         color: white;
 }
 
+#signInBtn {
+    background: rgb(0, 55, 95);
+    color: white;
+    border: none;
+}
+
+.here {
+    color: rgb(248, 221, 219);
+}
 
 
