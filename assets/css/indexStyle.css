@@ -24,8 +24,11 @@ body {
     border: none;
 }
 
-.here {
+.link {
     color: rgb(248, 221, 219);
 }
 
+#emailPrivacy{
+    color: white;
+}
 
