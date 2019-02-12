@@ -12,18 +12,13 @@
     padding: 20px;
 }
 
-.btn-warning {
-    background-color: pink;
-    border: 3px solid white;
-}
-
 #title{
     position: absolute;
     right: 450px;
     top: 50px;
 }
 
-#search{
+/* #search{
     position: absolute;
     top: 40px;
     left: 50px;
@@ -31,7 +26,7 @@
 
 #searchInput{
     margin-right: 15px;
-}
+} */
 
 .allContainers{
     margin: 20px;
@@ -40,4 +35,11 @@
 
 .card-body{
     margin: auto;
+}
+
+#Flag {
+    background: #70e1f5;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #ffd194, #70e1f5);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #ffd194, #70e1f5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
