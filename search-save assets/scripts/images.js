@@ -17,28 +17,38 @@ $(document).on("click", "#picture", function () {
     var favImage = $(this).attr('src');
     console.log(favImage);
 
+    var uid = firebase.auth().currentUser.uid;
+
     var newFav = {
         image: favImage,
     };
 
-    database.ref().push(newFav);
+    database.ref(
+        '/' + uid + '/images'
+    ).push(newFav);
 
 });
 
-database.ref().on("child_added", function (imageSnapshot) {
-    var addFavImage = imageSnapshot.val().image;
-    console.log(addFavImage);
-    var addImageDiv = $("<div>");
-    var newFavImage = $("<img>")
-    newFavImage.attr("src", addFavImage); //add small image source from the results
-    addImageDiv.append(newFavImage);  //append images to the div
-    $("#saved-images").prepend(addImageDiv); //dynamically push images to the div
 
-    //styling saved imaged in side panel
-    newFavImage.addClass("mt-2 mb-2");
-    newFavImage.attr('id', 'small'); 
 
-});
+firebase.auth().onAuthStateChanged(function(firebaseUser) {
+    if (firebaseUser) {
+            database.ref('/' + firebaseUser.uid + '/images').on("child_added", function (imageSnapshot) {
+                var addFavImage = imageSnapshot.val().image;
+                console.log(addFavImage);
+                var addImageDiv = $("<div>");
+                var newFavImage = $("<img>")
+                newFavImage.attr("src", addFavImage); //add small image source from the results
+                addImageDiv.append(newFavImage);  //append images to the div
+                $("#saved-images").prepend(addImageDiv); //dynamically push images to the div
+
+                //styling saved imaged in side panel
+                newFavImage.addClass("mt-2 mb-2");
+                newFavImage.attr('id', 'small'); 
+
+            });
+        }
+})
 
 //beginning of on click function that will grab a value from the button on index.html for the search
 var startSearch = function(keyword){

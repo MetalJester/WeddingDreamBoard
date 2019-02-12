@@ -29,9 +29,9 @@ $(document).ready(function(){
         var errorMessage = error.message;
 
         if (errorCode == 'auth/weak-password') {
-          alert('The password does not contain at least six characters.');
+          bootbox.alert('The password does not contain at least six characters.');
         } else {
-          alert("User does not exist. Please sign up.");
+          bootbox.alert("User does not exist. Please sign up.");
         }
 
       });
