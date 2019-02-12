@@ -24,10 +24,12 @@
 </head>
 
 <body>
+
+    
     <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">The Wedding Board</a>
+    <nav class="navbar navbar-expand-lg" id="Flag">
+        <a class="navbar-brand text-secondary">Wedding Dream Board</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -35,24 +37,24 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home</a>
+                    <a class="nav-link text-secondary" href="homepage.html">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Login</a>
+                    <a class="nav-link text-secondary" href="#">Logout</a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                </li>
+                </li> -->
             </ul>
         </div>
     </nav>
     <!-- fluid container for page content -->
     <div class="container-fluid">
         <!-- row for search field and save images header -->
-        <div class="row" style="background: rgb(255, 217, 0)">
+        <div class="row" id="Flag">
             <div class="col-9">
                 <div class="col">
                     <form class="form-inline">
@@ -65,8 +67,8 @@
 
             </div>
 
-            <div class="col-3 border-left border-light d-flex justify-content-center">
-                <h5 class="text-justify text-secondary mt-3">Saved Images</h5>
+            <div class="col-3 d-flex">
+                <h5 class="text-justify text-light mt-3">Saved Images</h5>
 
             </div>
 
