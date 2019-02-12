@@ -21,7 +21,8 @@ $(".mapBtn").on("click", function(){
 
 $(".ideaBtn").on("click", function(){
     console.log($(this).attr("tuxedo"));
-    window.location.href = "image-Search.html?q=" + $(this).attr("data-type");
+    // ?q=" + $(this).attr("data-type");
+    startSearch($(this).attr("data-type"));
 
 })
 

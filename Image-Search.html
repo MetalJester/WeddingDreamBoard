@@ -95,6 +95,44 @@
 
     <script src="search-save assets/scripts/images.js"></script>
 
+    <script>
+        $(document).ready(function(){
+            var results = JSON.parse(localStorage.getItem("leo"));
+
+            for (var i = 0; i < results.length; i++) {
+                console.log(results[i])
+
+            // Dynamically adding images to page
+                var imageDiv = $("<div>");  //dynamically create new div
+                var newImage = $("<img>");  //dynamically create new image tage
+                newImage.attr("src", results[i].urls.small); //add small image source from the results
+                imageDiv.append(newImage);  //append images to the div
+                $("#images-appear-here").prepend(imageDiv); //dynamically push images to the div
+
+                //dynamically adding photographer
+                var name = $("<p>").text("Photographer: " + results[i].user.name);
+                imageDiv.append(name);
+
+                //dynamically add link to image source
+                var portfolioLink = $(`<a href='${results[i].links.html}'>View image source and related photos</a>`);
+                imageDiv.append(portfolioLink);
+
+                // add styling to images on page
+                newImage.addClass("mt-5 mb-1 mr-5 ml-5");
+                newImage.attr('id', 'picture'); // add id to images for on-click function to save image
+
+                //add styling to photographer name
+                name.addClass("mb-0 mr-5 ml-5");
+                name.attr('id', 'photoText');
+
+                //add styilng to portfolio links
+                portfolioLink.addClass("mt-0 mr-5 ml-5");
+                portfolioLink.attr('id', 'photoText');
+
+
+        }
+        })    
+    </script>
 </body>
 
 </html>
