@@ -18,9 +18,10 @@ $(document).ready(function(){
 
       .then(function(user){
 
-        var url = "index.html";
+        var url = "homepage.html";
         $(location).attr('href', url);
         console.log(user);
+        
 
       })
       .catch(function(error){
