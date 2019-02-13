@@ -43,3 +43,39 @@
     background: linear-gradient(to right, #ffd194, #70e1f5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
+
+#weddingDress {
+    text-align: center;
+    text-decoration-color: gray;
+    font-weight: bold;
+}
+
+#groomstuxedo {
+    text-align: center;
+    text-decoration-color: gray;
+    font-weight: bold;
+}
+
+#cakes {
+    text-align: center;
+    text-decoration-color: gray;
+    font-weight: bold;
+}
+
+#venues {
+    text-align: center;
+    text-decoration-color: gray;
+    font-weight: bold;
+}
+
+#weddingBouquet {
+    text-align: center;
+    text-decoration-color: gray;
+    font-weight: bold;
+}
+
+#bridesMaidDress {
+    text-align: center;
+    text-decoration-color: gray;
+    font-weight: bold;
+}
