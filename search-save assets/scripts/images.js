@@ -83,3 +83,19 @@ var startSearch = function(keyword){
 
 // var keyword = "wedding-dress"; // need to change to default search term from home page button (data-val)
 //$("#image-input").val().trim();// this is secondary search term that will be appended to the default search term
+
+/////////////////// LOG-OUT ////////////////////
+
+$("#logoutLink").on("click", function(){
+    firebase.auth().signOut().then(function() {
+        
+        console.log("signout successful");
+
+        var url = "index.html";
+        $(location).attr('href', url);
+
+        // Sign-out successful.
+      }).catch(function(error) {
+        // An error happened.
+      });
+})
