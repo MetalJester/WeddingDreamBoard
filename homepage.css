@@ -44,10 +44,46 @@
     position: relative;
 }
 
+#weddingDress {
+    text-align: center;
+    text-decoration-color: gray;
+    font-weight: bold;
+}
+
+#groomstuxedo {
+    text-align: center;
+    text-decoration-color: gray;
+    font-weight: bold;
+}
+
+#cakes {
+    text-align: center;
+    text-decoration-color: gray;
+    font-weight: bold;
+}
+
+#venues {
+    text-align: center;
+    text-decoration-color: gray;
+    font-weight: bold;
+}
+
+#weddingBouquet {
+    text-align: center;
+    text-decoration-color: gray;
+    font-weight: bold;
+}
+
+#bridesMaidDress {
+    text-align: center;
+    text-decoration-color: gray;
+    font-weight: bold;
+
 a{
     position: absolute;
     right: 20px;
     bottom: 20px;
     color: white;
     size: 18px;
+
 }
