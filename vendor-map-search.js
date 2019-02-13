@@ -71,21 +71,24 @@ $(document).ready(function() {
    initMap();
 
 
-   
+getLocation();
+
+
 });
 
 //////////////////// LOG-OUT ////////////////////
 
 $("#logoutLink").on("click", function(){
   firebase.auth().signOut().then(function() {
- 
+
+      
       console.log("signout successful");
- 
+
       var url = "index.html";
       $(location).attr('href', url);
- 
       // Sign-out successful.
     }).catch(function(error) {
       // An error happened.
     });
- });
+
+})
