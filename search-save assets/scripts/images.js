@@ -69,7 +69,7 @@ var startSearch = function(keyword){
     }).then(function (response) {
         var results = response.results;
         localStorage.setItem("leo", JSON.stringify(results));
-        window.location.href = "image-Search.html";
+        window.location.href = "Image-Search.html";
        
         
 
