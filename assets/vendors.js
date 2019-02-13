@@ -1,3 +1,19 @@
+//////////////////// LOG-OUT ////////////////////
+
+$("#logoutLink").on("click", function(){
+    firebase.auth().signOut().then(function() {
+        
+        console.log("signout successful");
+
+        var url = "index.html";
+        $(location).attr('href', url);
+
+        // Sign-out successful.
+      }).catch(function(error) {
+        // An error happened.
+      });
+})
+
 // getting url parameters
 function getUrlVars(url) {
     var vars = {};
@@ -9,7 +25,7 @@ function getUrlVars(url) {
 
 var search = getUrlVars()['q'];
 
-console.log(search);
+// console.log(search);
 
 // link icon buttons on vendor--search.html
 $(".mapBtn").on("click", function(){
@@ -34,3 +50,5 @@ $(".favBtn").on("click", function(){
     // window.location.href = "......html?q=" + $(this).attr("data-type");
 
 })
+
+
