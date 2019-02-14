@@ -1,7 +1,7 @@
 //Global Variables
 var map;
 var service;
-var infoWindow = new google.maps.InfoWindow;
+var infoWindow;
 var LatLng = new google.maps.LatLng(38.575764, -121.478851);
 
 $(document).ready(function() {
@@ -10,9 +10,27 @@ $(document).ready(function() {
   function initMap() {
       map = new google.maps.Map(document.getElementById('map'), {
       center: LatLng,
-      zoom: 14
+      zoom: 12
     });
 
+    infoWindow = new google.maps.InfoWindow();
+    //Bridal shops
+    createMarker({lat: 38.521190, lng: -121.440830 })
+    createMarker({lat: 38.565030, lng: -121.407840 })
+    createMarker({lat: 38.575010, lng: -121.407000 })
+    createMarker({lat: 38.580200, lng: -121.490640 })
+    createMarker({lat: 38.567650, lng: -121.464880 })
+    //Create Markers
+    function createMarker(LatLng) {
+      var marker = new google.maps.Marker({
+        position: LatLng,
+        map: map
+      });
+      marker.setMap(map);
+    }
+
+    /////Out of time to debug this////
+    /*
     //Search nearby
     var request = {
       location: LatLng,
@@ -22,17 +40,6 @@ $(document).ready(function() {
   
     service = new google.maps.places.PlacesService(map);
     service.nearbySearch(request, callback);
-  }
-  
-    //Create Markers
-    function createMarker() {
-      var marker = new google.maps.Marker({
-        position: LatLng,
-        map: map,
-        title: name
-      });
-      marker.setMap(map);
-    }
   
     function callback(results, status) {
       if (status == google.maps.places.PlacesServiceStatus.OK) {
@@ -42,10 +49,9 @@ $(document).ready(function() {
         console.log(results[i]);
       }
     }
-
+    
     //geolocation
-    infoWindow = new google.maps.InfoWindow;
-
+    
     if (navigator.geolocation) {
        navigator.geolocation.getCurrentPosition(function(position) {
           var pos = {
@@ -64,15 +70,11 @@ $(document).ready(function() {
           // Browser doesn't support Geolocation
           handleLocationError(false, infoWindow, map.getCenter());
         }
-
-    
-  }
+      }
+      */
+    }
 
    initMap();
-
-
-getLocation();
-
 
 });
 
