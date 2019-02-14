@@ -78,12 +78,12 @@
     text-align: center;
     text-decoration-color: gray;
     font-weight: bold;
+}
 
-a{
+#logoutLink {
+    color: #545b62;
     position: absolute;
     right: 20px;
     bottom: 20px;
-    color: white;
     size: 18px;
-
 }

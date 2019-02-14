@@ -76,8 +76,6 @@ $(document).ready(function() {
 
    initMap();
 
-});
-
 //////////////////// LOG-OUT ////////////////////
 
 $("#logoutLink").on("click", function(){
@@ -94,3 +92,7 @@ $("#logoutLink").on("click", function(){
     });
 
 })
+
+});
+
+
