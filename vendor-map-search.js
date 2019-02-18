@@ -4,80 +4,78 @@ var service;
 var infoWindow;
 var LatLng = new google.maps.LatLng(38.575764, -121.478851);
 
-$(document).ready(function() {
+
 
   //Initialize Map Function
   function initMap() {
       map = new google.maps.Map(document.getElementById('map'), {
-      center: LatLng,
+      center: LatLng, //Bias map to Sacramento, CA -- User can change this later on
       zoom: 12
     });
 
-    infoWindow = new google.maps.InfoWindow();
-    //Bridal shops
-    createMarker({lat: 38.521190, lng: -121.440830 })
-    createMarker({lat: 38.565030, lng: -121.407840 })
-    createMarker({lat: 38.575010, lng: -121.407000 })
-    createMarker({lat: 38.580200, lng: -121.490640 })
-    createMarker({lat: 38.567650, lng: -121.464880 })
-    //Create Markers
-    function createMarker(LatLng) {
-      var marker = new google.maps.Marker({
-        position: LatLng,
-        map: map
-      });
-      marker.setMap(map);
-    }
+    //Adding some variables for the search box
+    var input = document.getElementById('location-input');
+    var searchBox = new google.maps.places.SearchBox(input);
 
-    /////Out of time to debug this////
-    /*
-    //Search nearby
-    var request = {
-      location: LatLng,
-      radius: '500', //This is in meters
-      type: ['florist']
-    };
-  
-    service = new google.maps.places.PlacesService(map);
-    service.nearbySearch(request, callback);
-  
-    function callback(results, status) {
-      if (status == google.maps.places.PlacesServiceStatus.OK) {
-      for (var i = 0; i < results.length; i++) {
-        var place = results[i];
-        createMarker(results[i]);
-        console.log(results[i]);
-      }
-    }
-    
-    //geolocation
-    
-    if (navigator.geolocation) {
-       navigator.geolocation.getCurrentPosition(function(position) {
-          var pos = {
-              lat: position.coords.latitude,
-              lng: position.coords.longitude
-          };
+    map.addListener('bounds_changed', function() {
+      searchBox.setBounds(map.getBounds());
+    });
 
-          infoWindow.setPosition(pos);
-          infoWindow.setContent('You are here.');
-          infoWindow.open(map);
-          map.setCenter(pos);
-          }, function() {
-            handleLocationError(true, infoWindow, map.getCenter());
+    var markers = [];
+        // Function to retrieve locations based on what user types in
+        searchBox.addListener('places_changed', function() {
+          var places = searchBox.getPlaces();
+
+          if (places.length == 0) {
+            return;
+          }
+
+          // Clear out the old markers
+          markers.forEach(function(marker) {
+            marker.setMap(null);
           });
-        } else {
-          // Browser doesn't support Geolocation
-          handleLocationError(false, infoWindow, map.getCenter());
-        }
-      }
-      */
-    }
+          markers = [];
 
-   initMap();
+          // For each place, get the icon, name and location
+          var bounds = new google.maps.LatLngBounds();
+          places.forEach(function(place) {
+            if (!place.geometry) {
+              console.log("Returned place contains no geometry");
+              return;
+            }
+            var icon = {
+              url: place.icon,
+              size: new google.maps.Size(71, 71),
+              origin: new google.maps.Point(0, 0),
+              anchor: new google.maps.Point(17, 34),
+              scaledSize: new google.maps.Size(25, 25)
+            };
+
+            // Create a marker for each place.
+            markers.push(new google.maps.Marker({
+              map: map,
+              icon: icon,
+              title: place.name,
+              position: place.geometry.location
+            }));
+
+            if (place.geometry.viewport) {
+              // Only geocodes have viewport.
+              bounds.union(place.geometry.viewport);
+            } else {
+              bounds.extend(place.geometry.location);
+            }
+          });
+          map.fitBounds(bounds);
+        });
+
+  }  
+
+  initMap();
+
 
 //////////////////// LOG-OUT ////////////////////
-
+$(document).ready(function() {
 $("#logoutLink").on("click", function(){
   firebase.auth().signOut().then(function() {
 
@@ -91,8 +89,6 @@ $("#logoutLink").on("click", function(){
       // An error happened.
     });
 
-})
-
 });
-
+});
 
